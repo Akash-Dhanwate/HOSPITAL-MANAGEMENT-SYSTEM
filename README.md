@@ -1,165 +1,159 @@
-Hospital Management System (Python + Tkinter + SQLite)
+# 🏥 Hospital Management System
 
-A modern, offline hospital record management application built with Python.
-The system allows operators to store, retrieve, preview, and manage patient and prescription data using a clean GUI, local database, QR code generation, visual effects, and audit logging.
+> A Python-based console application to streamline hospital operations — managing patients, doctors, and appointments efficiently.
 
-🚀 Overview
+---
 
-This project is a desktop-based Hospital Management System created using:
+## 📌 Table of Contents
 
-Python
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Project Structure](#project-structure)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
 
-Tkinter (GUI)
+---
 
-SQLite (local database)
+## 📖 About the Project
 
-Pillow (image handling)
+The **Hospital Management System** is a Python-based application designed to simplify and automate the day-to-day operations of a hospital. It allows staff to manage patient records, doctor information, and appointment scheduling — all from a simple, interactive console interface.
 
-qrcode (QR generation)
+This project was built as part of my B.Tech (AI & Data Science) learning journey to practice Python programming, data handling, and real-world problem solving.
 
-The app runs fully offline and automatically stores all data inside a single file:
-hospital.db
+---
 
-It includes extra polished features like animated particle backgrounds, time-based themes, ripple save effects, sound notifications, operator login, and action auditing.
+## ✅ Features
 
-✨ Features
-1. Patient & Prescription Entry
+- 📋 **Patient Management** — Add, view, update, and delete patient records
+- 👨‍⚕️ **Doctor Management** — Maintain a list of available doctors and their specializations
+- 📅 **Appointment Scheduling** — Book and manage appointments between patients and doctors
+- 🔍 **Search Functionality** — Search for patients or doctors by name or ID
+- 📁 **Data Persistence** — Patient and doctor data is stored and retrieved across sessions
+- 🖥️ **Console-Based Interface** — Simple menu-driven interface for easy navigation
 
-Input fields for tablets, dose, dates, side effects, patient details, etc.
+---
 
-Clean layout using Tkinter’s ttk styling.
+## 🛠️ Tech Stack
 
-2. Local Database (SQLite)
+| Technology | Purpose |
+|---|---|
+| **Python 3.x** | Core programming language |
+| **File Handling / CSV** | Data storage and retrieval |
+| **OOP Concepts** | Structured code using classes and objects |
+| **VS Code** | Development environment |
 
-Auto-creates tables on first launch.
+---
 
-Saves all records in hospital.db.
+## 🚀 Getting Started
 
-No external server required.
+### Prerequisites
 
-3. Record Table View
+Make sure you have the following installed on your system:
 
-Bottom table shows all saved entries.
+- Python 3.x — [Download here](https://www.python.org/downloads/)
+- Git — [Download here](https://git-scm.com/)
 
-Clicking a row loads it back into the form.
+You can verify your Python installation by running:
 
-4. Prescription Preview
+```bash
+python --version
+```
 
-Neatly formatted preview panel.
+---
 
-Displays all patient and medication information.
+### Installation
 
-5. QR Code Generation
+1. **Clone the repository**
 
-Automatically generates a QR image: qr_<reference>.png
+```bash
+git clone https://github.com/Akash-Dhanwate/python-project.git
+```
 
-Encodes reference, tablet name, and patient name as JSON.
+2. **Navigate into the project directory**
 
-“Show QR” button opens popup preview.
+```bash
+cd python-project
+```
 
-6. Operator Login System
+3. **No additional dependencies required** — this project uses Python's built-in libraries only.
 
-User must enter Name + Role before using the system.
+---
 
-Stored for audit logs.
+### Running the Application
 
-7. Audit Logging
+```bash
+python main.py
+```
 
-Every important action is recorded:
+Once launched, you will see a menu like this:
 
-Save
+```
+========== Hospital Management System ==========
+1. Add Patient
+2. View All Patients
+3. Search Patient
+4. Add Doctor
+5. Book Appointment
+6. View Appointments
+7. Exit
+================================================
+Enter your choice:
+```
 
-Preview
+Follow the on-screen prompts to navigate through the system.
 
-Delete
+---
 
-Show QR
+## 📁 Project Structure
 
-Clear
+```
+python-project/
+│
+├── main.py              # Main entry point of the application
+├── patient.py           # Patient class and related functions
+├── doctor.py            # Doctor class and related functions
+├── appointment.py       # Appointment scheduling logic
+├── data/
+│   ├── patients.csv     # Stored patient records
+│   └── appointments.csv # Stored appointment records
+└── README.md            # Project documentation
+```
 
-Stored in audit_log table with timestamp + operator identity.
+> **Note:** File/folder names may vary depending on the actual structure of the repository.
 
-8. UI Enhancements
+---
 
-Particle animation background.
+## 🔮 Future Improvements
 
-Time-based themes: morning, afternoon, night.
+Here are features planned for future versions of this project:
 
-Theme switch button.
+- [ ] **GUI Interface** — Build a graphical interface using Tkinter or PyQt
+- [ ] **Database Integration** — Replace CSV/file storage with MySQL or SQLite for better scalability
+- [ ] **Billing System** — Add invoice generation and payment tracking for patients
+- [ ] **Authentication** — Role-based login system for Admin, Doctor, and Receptionist
+- [ ] **Report Generation** — Export patient and appointment reports as PDF
+- [ ] **Web Version** — Rebuild the system as a web app using Flask or Django
 
-Ripple effect when saving data.
+---
 
-Sound feedback for Save, Delete, Error, QR.
+## 👤 Author
 
-Keyboard shortcuts:
+**Akash Dhanwate**
 
-Ctrl + Q: Quick QR popup
+- 🎓 B.Tech — Artificial Intelligence & Data Science
+- 💼 LinkedIn: [linkedin.com/in/4kashdhanwate](https://www.linkedin.com/in/4kashdhanwate)
+- 🐙 GitHub: [github.com/Akash-Dhanwate](https://github.com/Akash-Dhanwate)
+- 📷 Instagram: [instagram.com/ur_4kash](https://www.instagram.com/ur_4kash)
 
-Ctrl + Shift + F: Toggle table visibility
+---
 
-📦 Requirements
+> ⭐ If you found this project useful or interesting, feel free to **star the repository** — it means a lot!
 
-Install dependencies:
+---
 
-pip install qrcode pillow
-
-
-The app uses winsound for audio on Windows (no installation required).
-If on another OS, you can optionally install a sound library like playsound.
-
-▶️ How to Run
-
-Ensure Python 3.8+ is installed.
-
-Put all files in one folder.
-
-Open terminal in that folder.
-
-Run:
-
-python Hospitalmanagenmentsystem.py
-
-Operator login window will appear.
-
-Fill the form → Save / Preview → View records in table.
-
-📁 Project Structure
-|-- hospital_app.py
-|-- hospital.db           (auto-created)
-|-- error.log             (auto-created on errors)
-|-- qr_<ref>.png          (generated QR files)
-|-- README.md
-|-- *.wav                 (sound files if added)
-
-⚙️ Database Schema
-1. hospital table
-Column	Description
-nameoftablets	Tablet name
-Refrence	Unique reference number
-dose	Patient dosage
-nooftablets	Quantity
-issuedate	Date issued
-expdate	Expiry date
-dailydose	Daily dose
-sideeffect	Known side effects
-nameofpatient	Name of patient
-dob	Date of birth
-patientaddress	Full address
-2. audit_log table
-
-Tracks operator actions:
-
-Operator name
-
-Operator roll
-
-Action name
-
-Reference number
-
-Timestamp
-
-🧪 Error Logging
-
-Any unexpected error (like database write failure) is written to error.log with the full traceback and timestamp.
-The user only sees a clean error message.
+*Built with 💙 as part of my Python learning journey.*
